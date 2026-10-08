@@ -4,9 +4,6 @@ runtime-version: '6.11'
 sdk: org.kde.Sdk
 command: l8w8jwtgui
 
-# Deliberately minimal: no network, no filesystem, no D-Bus services.
-# The app only needs a display, the kernel's random number generator (always available)
-# and its own QSettings file, which lands in ~/.var/app/com.glitchedpolygons.l8w8jwtgui/config/.
 finish-args:
   - --share=ipc
   - --socket=fallback-x11
