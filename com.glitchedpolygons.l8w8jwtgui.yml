@@ -29,3 +29,4 @@ modules:
         url: https://codeberg.org/GlitchedPolygons/l8w8jwtgui.git
         tag: 1.0.4
         commit: bb6d92705401f76269d3c08bbd2fe0386e90bf41
+        disable-lfs: true
