@@ -1,0 +1,31 @@
+id: com.glitchedpolygons.l8w8jwtgui
+runtime: org.kde.Platform
+runtime-version: '6.11'
+sdk: org.kde.Sdk
+command: l8w8jwtgui
+
+# Deliberately minimal: no network, no filesystem, no D-Bus services.
+# The app only needs a display, the kernel's random number generator (always available)
+# and its own QSettings file, which lands in ~/.var/app/com.glitchedpolygons.l8w8jwtgui/config/.
+finish-args:
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --device=dri
+
+modules:
+  - name: l8w8jwtgui
+    buildsystem: cmake-ninja
+    builddir: true
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+    cleanup:
+      - /include
+      - /lib/cmake
+      - /lib/pkgconfig
+      - '*.a'
+    sources:
+      - type: git
+        url: https://codeberg.org/GlitchedPolygons/l8w8jwtgui.git
+        tag: 1.0.4
+        commit: bb6d92705401f76269d3c08bbd2fe0386e90bf41
