@@ -11,6 +11,8 @@ finish-args:
   - --device=dri
 
 modules:
+  - python3-mbedtls-build-deps.yaml
+
   - name: l8w8jwtgui
     buildsystem: cmake-ninja
     builddir: true
@@ -24,6 +26,6 @@ modules:
     sources:
       - type: git
         url: https://codeberg.org/GlitchedPolygons/l8w8jwtgui.git
-        tag: 1.0.4
-        commit: bb6d92705401f76269d3c08bbd2fe0386e90bf41
+        tag: 1.0.5
+        commit: f669ffc6bfdb544585b0704d79a616822d9c77b3
         disable-lfs: true
